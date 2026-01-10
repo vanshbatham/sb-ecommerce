@@ -48,7 +48,6 @@ public class AddressController {
     @GetMapping("/addresses/{addressId}")
     public ResponseEntity<AddressDTO> getAddressById(@PathVariable Long addressId) {
         AddressDTO addressList = addressService.getAddressById(addressId);
-
         return new ResponseEntity<>(addressList, HttpStatus.OK);
     }
 
@@ -57,8 +56,6 @@ public class AddressController {
     public ResponseEntity<AddressDTO> updateAddress(@PathVariable Long addressId,
                                                     @RequestBody AddressDTO addressDTO) {
         AddressDTO updatedAddress = addressService.updateAddress(addressId, addressDTO);
-
-
         return new ResponseEntity<>(updatedAddress, HttpStatus.OK);
     }
 
